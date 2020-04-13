@@ -11,13 +11,14 @@
         <div class="row justify-content-center" style="margin-top:100px">
             <div class="col-md-6">
                 <div class="input-group">
-                    <input type="text"  class="form-control" placeholder="Enter new task">
+                    <input type="text" id="taskValue" class="form-control" placeholder="Enter new task">
                     <div class="input-group-append">
-                        <button class="btn btn-success">
+                        <button class="btn btn-success" onclick="addBtn()">
                             + Add
                         </button>
                     </div>
                 </div>
+                 <span id="errMessage" class="text-danger"></span>
             </div>
         </div>
     </div>
