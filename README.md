@@ -1,29 +1,16 @@
-# Todo list
+# Todo List
 
-Foobar is a Python library for dealing with word pluralization.
+ToDo List is a simple web app for keeping everyday tasks
 
-## Installation
+### Features
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+* Add new task
+* Delete single task
 
-```bash
-pip install foobar
-```
+### Technologies used:
 
-## Usage
+* HTML
+* CSS
+* JavaScript
+* bootstrap4
 
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
