@@ -1,3 +1,4 @@
+/************Add text to todo list*******************/
 function addBtn() {
     var task = document.getElementById("taskValue").value;
     //if not empty and example validation
@@ -15,6 +16,7 @@ function addBtn() {
     }
 }
 
+/*************Add new item to todo list*************/
 function addNewTask(element) {
     var list = document.getElementById("todoList"),
         todoItem = document.createElement('div'),
@@ -26,8 +28,20 @@ function addNewTask(element) {
     var remove = document.createElement("button");
     remove.classList.add('btn', 'btn-danger', 'btn-sm');
     remove.innerHTML = 'Delete';
+    //Call the function removeItem with event click
+    remove.addEventListener('click', removeItem);
     todoItem.appendChild(remove);
     newItem.appendChild(todoItem);
     //insert new todo before the first element
     list.insertBefore(newItem, list.childNodes[0]);
+}
+
+/**************Remove item with confirmation dialogue*******************/
+function removeItem() {
+    var confirmation = confirm("Want to delete ?"),
+        item = this.parentNode.parentNode, //targeting li
+        parent = item.parentNode; //targeting ul
+    if (confirmation) {
+        parent.removeChild(item);
+    }
 }
