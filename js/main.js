@@ -19,8 +19,14 @@ function addNewTask(element) {
     var list = document.getElementById("todoList"),
         todoItem = document.createElement('div'),
         newItem = document.createElement("li");
+
     newItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
     newItem.innerText = element;
+    //creates remove button
+    var remove = document.createElement("button");
+    remove.classList.add('btn', 'btn-danger', 'btn-sm');
+    remove.innerHTML = 'Delete';
+    todoItem.appendChild(remove);
     newItem.appendChild(todoItem);
     //insert new todo before the first element
     list.insertBefore(newItem, list.childNodes[0]);
