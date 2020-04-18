@@ -1,12 +1,13 @@
 /************Add text to todo list*******************/
-function addBtn() {
+function addBtn(event) {
+    if (event.which == 13 || event.button == 0) { 
     var task = document.getElementById("taskValue").value;
     //if not empty and example validation
-    if (task.length > 3 && /\S/.test(task)) {
-        addNewTask(task);
+    if (task.length > 3) {
         document.getElementById("taskValue").value = "";
         document.getElementById("errMessage").innerHTML = "";
         document.getElementById("taskValue").classList.remove('is-invalid');
+        addNewTask(task);
     } else if (task.length > 0 && task.length <= 3) {
         document.getElementById("errMessage").innerHTML = "This field must contain more than 3 characters";
         document.getElementById("taskValue").classList.add('is-invalid');
@@ -14,19 +15,20 @@ function addBtn() {
         document.getElementById("errMessage").innerHTML = "This field is required";
         document.getElementById("taskValue").classList.add('is-invalid');
     }
-}
 
-/*************Add new item to todo list*************/
+    }
+}
+ /*************Add new item to todo list*************/
 function addNewTask(element) {
     var list = document.getElementById("todoList"),
         todoItem = document.createElement('div'),
         newItem = document.createElement("li");
 
-    newItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+    newItem.classList.add('list-group');
     newItem.innerText = element;
     //creates remove button
     var remove = document.createElement("button");
-    remove.classList.add('btn', 'btn-danger', 'btn-sm');
+    remove.classList.add('btn-delete');
     remove.innerHTML = 'Delete';
     //Call the function removeItem with event click
     remove.addEventListener('click', removeItem);
@@ -35,7 +37,6 @@ function addNewTask(element) {
     //insert new todo before the first element
     list.insertBefore(newItem, list.childNodes[0]);
 }
-
 /**************Remove item with confirmation dialogue*******************/
 function removeItem() {
     var confirmation = confirm("Want to delete ?"),

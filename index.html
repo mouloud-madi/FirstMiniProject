@@ -1,31 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TodoList</title>
     <link rel="stylesheet" href="style/main.css">
-  </head>
- <body>
- 	 <div class="container">
-        <div class="row justify-content-center" style="margin-top:100px">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <input type="text" id="taskValue" class="form-control" placeholder="Enter new task">
-                    <div class="input-group-append">
-                        <button class="btn btn-success" onclick="addBtn()">
-                            + Add
-                        </button>
-                    </div>
-                </div>
-                 <span id="errMessage" class="text-danger"></span>
-                  <div class="mt-4">
-                    <ul class="list-group" id="todoList">
-                    </ul>
-                </div>
-            </div>
+</head>
+<body>
+    <div class="main">
+        <input type="text" id="taskValue" onkeypress="return addBtn(event)" placeholder="Enter new task">
+        <div class="button-add">
+            <button type="button" class="button" onclick="addBtn(event)"> Add +</button>
         </div>
     </div>
-    <script type="text/javascript" src="js/main.js"></script> 
+    <span id="errMessage" class="errMessage"></span>
+    <div class="list">
+        <ul class="todoList" id="todoList">
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
